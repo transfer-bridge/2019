@@ -1,0 +1,16 @@
+/* Sets font to match IG, off-white background to make post stand out */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f3f3;
+    font-size: 14px;
+}
+
+/* Fixes 3px gap under img tags */
+img {
+    vertical-align: bottom;
+}
+
+/* Allows for finer control of line spacing */
+p {
+    margin: 0;
+}
