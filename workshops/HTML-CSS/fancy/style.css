@@ -1,0 +1,160 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f3f3;
+    font-size: 14px;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+p {
+    margin: 0;
+}
+
+#wrapper {
+    width: 614px;
+    margin: 0 auto;
+    border-radius: 3px;
+    border: 1px solid rgb(230, 230, 230);
+}
+
+#header {
+    display: flex;
+    padding: 5px 16px;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border-radius: 3px 3px 0 0;
+}
+
+#profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-right: 15px;
+}
+
+.bold {
+    font-weight: 500;
+}
+
+#image {
+    width: 100%;
+}
+
+#footer {
+    background: white;
+    border-radius: 0 0 3px 3px;
+    padding-bottom: 16px;
+}
+
+#icons {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    padding: 10px 16px 0 16px;
+}
+
+.left-icons {
+    display: flex;
+    align-content: center;
+    margin-left: -5px;
+}
+
+.icon {
+    height: 24px;
+    margin: 0 5px;
+}
+
+#likes {
+    display: flex;
+    align-items: center;
+    padding: 1em 16px 0 16px;
+}
+
+#likes .profile-picture {
+    height: 20px;
+    width: 20px;
+    margin-right: 7px;
+}
+
+#likes .bold {
+    margin: 0 5px;
+}
+
+#description {
+    display: flex;
+    align-items: center;
+    padding: 5px 16px 0 16px;
+}
+
+#description .bold,
+.comment .bold {
+    margin-right: 5px;
+}
+
+#comments {
+    padding: 1em 16px 0 16px;
+}
+
+.comment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment-text {
+    display: flex;
+    align-items: center;
+}
+
+.comment .icon {
+    height: 12px;
+}
+
+#time-posted {
+    color: rgb(179, 179, 179);
+    text-transform: uppercase;
+    font-size: 10px;
+    padding: 5px 16px 1em 16px;
+}
+
+#form-border {
+    border-top: 1px solid rgb(230, 230, 230);
+}
+
+#add-comment {
+    display: flex;
+    align-items: baseline;
+    padding: 1em 16px 0 16px;
+}
+
+#add-comment input {
+    border: none;
+    background: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#add-comment input[type=text] {
+    color: rgb(179, 179, 179);
+    width: 600px;
+}
+
+#add-comment input[type=text]:focus {
+    outline: none;
+}
+
+#add-comment input[type=submit] {
+    color: rgb(101, 152, 255);
+}
+
+#add-comment input[type=submit]:focus {
+    outline: none;
+}
