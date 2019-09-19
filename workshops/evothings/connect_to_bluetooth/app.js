@@ -43,6 +43,7 @@ function connectSuccess(device)
     console.log('Successfully connected!!');
     app.connected = true;
     app.device = device; 
+    app.device.readServices(serviceSuccess, serviceFailure, [ app.SERVICE_UUID]);
 }
 
 function connectFailure()
@@ -62,4 +63,57 @@ app.disconnect = function(errorMessage)
 
     evothings.easyble.stopScan();
     evothings.easyble.closeConnectedDevices();
+}
+
+function serviceSuccess(device)
+{
+    console.log('The bluetooth module can now read and write');
+    app.device.enableNotification(
+        app.SERVICE_UUID,
+        app.CHARACTERISTIC_UUID,
+        app.receivedData,
+        function(errorCode)
+        {
+            console.log('Failed to receive notification from device' + errorCode);
+        },
+        { writeConfigDescriptor: false }
+    );
+}
+
+function serviceFailure(errorCode)
+{
+    console.log('Failed to read services' + errorCode);
+    app.disconnect();
+}
+
+app.sendData = function(data)
+{
+    if (app.connected && app.device != null)
+    {
+        data = new Uint8Array(data);
+        app.device.writeCharacteristic(
+            app.CHARACTERISTIC_UUID,
+            data,
+            function ()
+            {
+                Console.log('Succeed to send message!' + data);
+            },
+            function (errorCode)
+            {
+                Console.log('Failed to send message!' + errorCode);
+            }
+        );
+    }
+    else
+    {
+        app.disconnect('Device was disconnected when trying to send message');
+    }
+}
+
+app.receivedData = function(data)
+{
+    //0X16
+    if(data == 0x16)
+    {    //vibrate the phone, change the color of button, .... 
+    }
 }
